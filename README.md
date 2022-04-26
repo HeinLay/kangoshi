@@ -1,1 +1,2 @@
-echo "# kangoshi"
+echo "# kangoshi";
+Test
