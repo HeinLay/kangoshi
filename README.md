@@ -1,2 +1,3 @@
 echo "# kangoshi";
 Test
+update
