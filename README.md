@@ -1,3 +1,3 @@
-echo "# kangoshi";
+echo "# kangoshi-ranking";
 Test
 update
