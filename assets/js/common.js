@@ -102,3 +102,10 @@ $(document).ready(function(){
   $('.f4 ul li:nth-child(3) label').html(line);
 });
 
+
+// border of graph
+$(document).ready(function(){
+  $( "<div class='graph__item__br'><span></span><span></span><span></span><span></span></div>" ).appendTo( ".graph .pb-bar-graph__item" );
+});
+
+

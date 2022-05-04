@@ -1729,17 +1729,39 @@ body {
     }
 
     .pb-bar-graph__item {
+      position: relative;
       padding: 0 !important;
       background: rgba(255, 51, 100, 0.3) !important;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
       opacity: 0.8;
 
       @include mq(sp) {
-        height: 35px;
+        height: 25px;
       }
 
       @include mq() {
-        height: 40px;
+        height: 30px;
       }
+      .graph__item__br {
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        span {
+          border-right: 2px dotted $black;
+          @include mq(sp) {
+            width: 19.3%;
+          }
+    
+          @include mq() {
+            width: 19.5%;
+          }
+        }
+      }
+      
     }
   }
 }
@@ -1763,6 +1785,8 @@ body {
 
   .pb-bar-graph__fill {
     background: #ff3364 !important;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 
   .pb-bar-graph__dd {
@@ -1775,6 +1799,7 @@ body {
     opacity: 1 !important;
   }
 }
+
 
 // pg-content
 .pg-content {
