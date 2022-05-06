@@ -375,7 +375,7 @@ body {
 
         &:first-child {
           @include mq(sp) {
-            min-width: 210px;
+            min-width: 157px;
           }
 
           @include mq() {
@@ -385,7 +385,7 @@ body {
 
         &:nth-child(2) {
           @include mq(sp) {
-            min-width: 120px;
+            min-width: 128px;
           }
 
           @include mq() {
@@ -395,7 +395,7 @@ body {
 
         &:nth-child(3) {
           @include mq(sp) {
-            min-width: 120px;
+            min-width: 128px;
           }
 
           @include mq() {
@@ -408,7 +408,7 @@ body {
           text-align: left;
 
           @include mq(sp) {
-            min-width: 150px;
+            min-width: 158px;
           }
 
           @include mq() {
@@ -419,7 +419,7 @@ body {
         &:nth-child(5),
         &:last-child {
           @include mq(sp) {
-            min-width: 100px;
+            min-width: 108px;
           }
 
           @include mq() {
@@ -429,7 +429,7 @@ body {
 
         &:nth-child(6) {
           @include mq(sp) {
-            min-width: 50px;
+            min-width: 58px;
           }
 
           @include mq() {
@@ -1101,7 +1101,7 @@ body {
 
         .cmt-blk {
           .cmt-info {
-            background: $color13;
+            background: $color23;
             border-radius: 10px;
 
             @include mq(sp) {
