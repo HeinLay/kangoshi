@@ -45,7 +45,6 @@ get_header();
             <tbody>
               <tr>
                 <th>会社</th>
-                <th>公式サイト</th>
                 <th>満足度</th>
                 <th>ポイント</th>
                 <th>求人数</th>
@@ -56,15 +55,22 @@ get_header();
                 <?php query_posts('posts_per_page=8&post_type=agent_list&order=DESC&paged='.$paged); ?>
                   <?php while (have_posts()) : the_post(); 
                   $company_size = get_field('company-size');
-                  $transition_destination = get_field('transition-destination');
                   $public_job_openings = get_field('public-job-openings');
                   $point = get_field('table-point');
                   $region = get_field('table-region');
-                  $company = get_field('company');
+                  
+                  if (have_rows('company')) : ?>
+                    <?php while (have_rows('company')) : the_row(); 
+                      $company_logo = get_sub_field('company-logo');
+                      $company_link = get_sub_field('company-link');
+                      $company_name = get_sub_field('company-name');
+                  endwhile; endif; 
                   ?>
                     <tr>
-                      <td><div class="company-img"><img src="<?php echo $company; ?>" alt=""></div></td>
-                      <td><a href="<?php echo $transition_destination; ?>" target="_blank" rel="noopener noreferrer" class="ranking-btn">サイトをみる</a></td>
+                      <td>
+                        <div class="company-img"><img src="<?php echo $company_logo; ?>" alt=""></div>
+                        <a href="<?php echo $company_link; ?>" class="company-link"><?php echo $company_name; ?></a>
+                      </td>
                       <td class="star"><?php echo do_shortcode('[ratemypost-result]'); ?></td>
                       <td><?php echo $point; ?></td>
                       <td><?php echo $public_job_openings; ?></td>
@@ -152,10 +158,20 @@ get_header();
               <?php while (have_posts()) : the_post(); 
               $catchphrase = get_field('catchphrase'); 
               $transition_destination = get_field('transition-destination');
-              $company = get_field('company');?>
+
+              if (have_rows('company')) : ?>
+                <?php while (have_rows('company')) : the_row(); 
+                  $company_logo = get_sub_field('company-logo');
+              endwhile; endif; 
+              ?>
               <div class="agent-data">
                 <div class="ttl-gp">
-                  <h5 class="agent-name"><img src="<?php echo $company; ?>" alt="<?php the_title(); ?>"></h5>
+                  <div class="agent-name">
+                    <h5><?php the_title(); ?></h5>
+                    <div class="agent-logo">
+                      <img src="<?php echo $company_logo; ?>" alt="<?php the_title(); ?>">
+                    </div>
+                  </div>
                   <div class="rating-star">
                     <?php echo do_shortcode('[ratemypost-result]'); ?>
                   </div>

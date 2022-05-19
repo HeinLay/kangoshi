@@ -306,7 +306,7 @@ body {
   @include mq(sp) {
     margin-top: 3rem;
     box-sizing: border-box;
-    max-width: 850px;
+    max-width: 600px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
   }
@@ -366,7 +366,7 @@ body {
         background: $white;
 
         @include mq(sp) {
-          padding: 1rem 0.7rem;
+          padding: 1rem 0.3rem;
         }
 
         @include mq() {
@@ -375,17 +375,42 @@ body {
 
         &:first-child {
           @include mq(sp) {
-            min-width: 157px;
+            min-width: 120px;
           }
 
           @include mq() {
-            width: 24%;
+            width: 25%;
           }
         }
 
         &:nth-child(2) {
           @include mq(sp) {
-            min-width: 128px;
+            min-width: 80px;
+          }
+
+          @include mq() {
+            width: 13%;
+            padding: 2rem 0.5rem;
+          }
+        }
+
+        &:nth-child(3) {
+          text-align: left;
+
+          @include mq(sp) {
+            min-width: 110px;
+            font-size: 1.2rem;
+          }
+
+          @include mq() {
+            width: 26%;
+          }
+        }
+
+        &:nth-child(4),
+        &:last-child {
+          @include mq(sp) {
+            min-width: 108px;
           }
 
           @include mq() {
@@ -393,41 +418,7 @@ body {
           }
         }
 
-        &:nth-child(3) {
-          @include mq(sp) {
-            min-width: 128px;
-          }
-
-          @include mq() {
-            width: 11.4%;
-            padding: 2rem 0.5rem;
-          }
-        }
-
-        &:nth-child(4) {
-          text-align: left;
-
-          @include mq(sp) {
-            min-width: 158px;
-          }
-
-          @include mq() {
-            width: 19.4%;
-          }
-        }
-
-        &:nth-child(5),
-        &:last-child {
-          @include mq(sp) {
-            min-width: 108px;
-          }
-
-          @include mq() {
-            width: 11%;
-          }
-        }
-
-        &:nth-child(6) {
+        &:nth-child(5) {
           @include mq(sp) {
             min-width: 58px;
           }
@@ -449,9 +440,16 @@ body {
           .rmp-results-widget__visual-rating {
             margin: 0;
 
-            .rmp-icon--ratings {
-              margin: 0 2px;
-              font-size: 1.6rem;
+            .rmp-icon--ratings { 
+              
+              @include mq(sp) {
+                font-size: 1.2rem;
+                margin: 0 1px;
+              }
+              @include mq() {
+                font-size: 1.6rem;
+                margin: 0 2px;
+              }
             }
           }
         }
@@ -476,6 +474,16 @@ body {
 
         .company-img {
           margin: 0 auto;
+        }
+        
+        .company-link {
+          display: inline-block;
+          margin-top: 1rem;
+          text-decoration: underline;
+          color: $color25;
+          @include mq(sp) {
+            font-size: 1.2rem;
+          }
         }
       }
 
@@ -879,17 +887,40 @@ body {
         }
 
         .agent-name {
+          display: flex;
+          align-items: center;
           @include mq(sp) {
-            width: 60%;
+            margin-bottom: 1rem;
           }
 
           @include mq() {
-            width: 30%;
+            width: 60%;
+          }
+
+          h5 {
+            @include mq(sp) {
+              font-size: 1.8rem;
+            }
+
+            @include mq() {
+              font-size: 3rem;
+            }
           }
           
-          img {
-            margin: 0;
-            object-fit: contain;
+          .agent-logo {
+            @include mq(sp) {
+              width: 35%;
+              margin-left: 1rem;
+            }
+
+            @include mq() {
+              width: 30%;
+              margin-left: 2rem;
+            }
+            img {
+              margin: 0;
+              object-fit: contain;
+            }
           }
         }
       }
@@ -1751,7 +1782,7 @@ body {
         width: 100%;
         height: 100%;
         span {
-          border-right: 2px dotted $black;
+          border-right: 2px dotted $color26;
           @include mq(sp) {
             width: 19.3%;
           }
